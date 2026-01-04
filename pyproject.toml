@@ -1,0 +1,29 @@
+[project]
+name = "find-libraries"
+version = "0.1.0"
+description = "Library Inspection"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.12.4"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=9.0.1",]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # Pyflakes
+    "I", # isort
+    "UP", # pyupgrade
+]
+
+ignore = [
+    "E501", # line-too-long
+]
